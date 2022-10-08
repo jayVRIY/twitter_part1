@@ -1,5 +1,5 @@
 # Twitter - Part II
-
+# Get 403 error may cause by the VPN or locate in china, or something wrong with the account.
 This is a basic twitter app to view, compose, favorite, and retweet tweets.
 
 Time spent: **X** hours spent in total
