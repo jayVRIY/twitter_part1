@@ -10,14 +10,14 @@ import UIKit
 
 class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
-        if UserDefaults.standard.bool(forKey: "loginToHome"){
+        if UserDefaults.standard.bool(forKey: "userIsLogin"){
             self.performSegue(withIdentifier: "loginToHome", sender: self)
         }
     }
-    @IBAction func onLoginButton(_ sender: Any) {
+    @IBAction func onLoginButton(_ sender: Any) { 
         let myUrl = "https://api.twitter.com/oauth/request_token"
         TwitterAPICaller.client?.login(url: myUrl, success: {
-            UserDefaults.standard.set(myUrl, forKey: "loginToHome")
+            UserDefaults.standard.set(true, forKey: "userIsLogin")
             self.performSegue(withIdentifier: "loginToHome", sender: self)
         }, failure: { Error in
             print(Error)
